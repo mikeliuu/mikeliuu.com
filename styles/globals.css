@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: "#31456A";
+  --color-secondary: "#EBF3FA";
+  --color-secondary-dark: "#D6E1EF";
+  --color-secondary-light: "#E3EDF7";
+  --color-dark: "#121417";
+  --color-dark-light: "#272B30";
+  --color-info: "#6D737A";
+}
+
+.dark .card {
+  background: linear-gradient(
+    94.6deg,
+    #2f3439 -72.68%,
+    #26292e 26.94%,
+    #17191c 185.78%
+  );
+  box-shadow: -5px -6px 16px rgba(195, 200, 205, 0.04),
+    22px 22px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    244.98deg,
+    rgba(80, 89, 98, 0.4) 11.49%,
+    rgba(0, 0, 0, 0) 53.04%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.dark .toggle {
+  background: linear-gradient(
+    94.6deg,
+    #2f3439 -72.68%,
+    #26292e 26.94%,
+    #17191c 185.78%
+  );
+  box-shadow: 2px 2px 8px 0px rgba(4, 4, 5, 0.6) inset;
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    102.13deg,
+    #6d7883 -155.86%,
+    #1e2328 96.48%
+  );
+}
+
+.dark .toggle::after {
+  box-shadow: inset 0px -1px 1px #181a1d;
+}
+
+.dark .progress-bar {
+  background: linear-gradient(
+    2.48deg,
+    #606973 -7.86%,
+    #40464e 16.27%,
+    #191e25 69.82%
+  );
+  box-shadow: inset 1px 0px 2px rgba(255, 255, 255, 0.1),
+    inset 4px 4px 6px rgba(18, 46, 101, 0.1);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    102.13deg,
+    #6d7883 -155.86%,
+    #1e2328 96.48%
+  );
+}
+
+.dark .progress-bar > div {
+  background: linear-gradient(89.98deg, #51585f -38.44%, #070808 236.51%);
+  box-shadow: -1px 2px 2px rgba(15, 18, 22, 0.6),
+    inset 0px 0px 4px rgba(11, 15, 18, 0.22), inset 0px -2px 1px #0e1216;
+  backdrop-filter: blur(14px);
+}
+
+.dark .button {
+  background: linear-gradient(327.43deg, #32383e -77.68%, #17191c 87.35%);
+  box-shadow: -4px -2px 16px rgba(195, 200, 205, 0.05),
+    4px 4px 18px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--color-dark);
+  border-radius: 1rem;
+  transition: all;
+
+  color: var(--color-secondary);
+  background-color: var(--color-dark);
+}
+
+.dark .button:hover,
+.dark .button:active,
+.dark .button:focus {
+  box-shadow: inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+    inset 2px 3px 10px #070709;
+  border: 1px solid var(--color-dark);
+  border-image-source: radial-gradient(
+    110.83% 110.83% at -10% -46.67%,
+    rgba(243, 112, 17, 0.3) 17.02%,
+    rgba(243, 110, 14, 0) 91.97%
+  );
+
+  color: var(--color-secondary-dark);
+  background-color: var(--color-dark);
+}
+
+.card {
+  background: linear-gradient(210.55deg, #ebf2f9 19.14%, #c6d7eb 154.68%);
+  box-shadow: 8px 40px 96px rgba(18, 61, 101, 0.14),
+    inset -8px -6px 80px rgba(255, 255, 255, 0.18);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    165.33deg,
+    #ffffff 15.76%,
+    rgba(219, 230, 242, 0) 47.38%,
+    #8f9fae 111.31%
+  );
+}
+
+.toggle {
+  background: linear-gradient(0deg, #dee8f2, #dee8f2);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    113.28deg,
+    #ffffff 3.93%,
+    #c6d7eb 96.73%,
+    #759cca 96.73%
+  );
+  box-shadow: 2px 2px 5px 0px rgba(105, 141, 173, 0.4) inset;
+}
+
+.toggle::after {
+  box-shadow: 2px 2px 8px rgba(136, 165, 191, 0.28),
+    inset 0px -1px 1px rgba(85, 102, 123, 0.4);
+}
+
+.progress-bar {
+  background: linear-gradient(
+    8.37deg,
+    #ffffff -30.86%,
+    #ecf1f7 -10.72%,
+    #cfdceb 112.31%
+  );
+  box-shadow: inset -4px -2px 4px rgba(255, 255, 255, 0.7),
+    inset 4px 4px 6px rgba(18, 46, 101, 0.1);
+  border: 1px solid;
+  border-image-source: linear-gradient(
+    130.18deg,
+    #ffffff 35.92%,
+    rgba(55, 83, 111, 0.4) 190.57%
+  );
+}
+
+.progress-bar > div {
+  background: linear-gradient(89.72deg, #f0f4f9 -4.95%, #587ca5 578.66%);
+  box-shadow: -1px 2px 2px rgba(24, 55, 91, 0.1),
+    inset 0px 0px 4px rgba(46, 68, 87, 0.02),
+    inset 0px -2px 1px rgba(39, 81, 126, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.button {
+  border: 1px solid var(--color-secondary-light);
+  box-shadow: -4px -2px 16px #ffffff, 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 1rem;
+  transition: all;
+
+  color: var(--color-info);
+  background-color: var(--color-secondary-light);
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+  box-shadow: inset -3px -3px 7px #ffffff,
+    inset 3px 3px 7px rgba(136, 165, 191, 0.48);
+  border: 1px solid var(--color-secondary-light);
+  border-image-source: linear-gradient(
+    130.18deg,
+    #ffffff 35.92%,
+    rgba(55, 83, 111, 0.4) 190.57%
+  );
+
+  color: var(--color-secondary);
+  background-color: var(--color-secondary);
+}
