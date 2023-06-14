@@ -24,7 +24,13 @@ export default function ContactCard() {
       <div className="grid grid-flow-col gap-6">
         {contacts?.map((item, index) => {
           return (
-            <Link key={index} href={item?.href} className="button p-4">
+            <Link
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+              href={item?.href}
+              className="button p-4"
+            >
               {item?.icon}
             </Link>
           );
