@@ -9,7 +9,7 @@ import { siteContent } from "@/config/site";
 export default function GoogleMapCard() {
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [percentage, setPercentage] = useState(5);
+  const [percentage, setPercentage] = useState(15);
 
   useEffect(() => {
     if (percentage >= 99) return;
