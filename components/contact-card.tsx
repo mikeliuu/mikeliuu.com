@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Card } from "./ui/card";
 import { Icons } from "./icon";
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteContent } from "@/config/site";
 
 export default function ContactCard() {
   const contacts = [
@@ -21,6 +21,8 @@ export default function ContactCard() {
 
   return (
     <Card className="relative flex justify-center items-center flex-row text-primary dark:text-secondary">
+      <div className="ssr-only">{siteContent.contact}</div>
+
       <div className="grid grid-flow-col gap-6">
         {contacts?.map((item, index) => {
           return (

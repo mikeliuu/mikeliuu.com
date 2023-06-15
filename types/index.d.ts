@@ -10,3 +10,10 @@ export type SiteConfig = {
     linkedin: string;
   };
 };
+
+export type SiteContent = {
+  profile: string;
+  map: string;
+  weather: string;
+  contact: string;
+};

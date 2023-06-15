@@ -12,6 +12,20 @@
   --color-info: "#6D737A";
 }
 
+.ssr-only {
+  display: none;
+  font-size: 0;
+  color: transparent;
+  background: transparent;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+}
+
 .dark .card {
   background: linear-gradient(
     94.6deg,
