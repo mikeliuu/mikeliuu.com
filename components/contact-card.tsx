@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { Card } from "./ui/card";
 import { Icons } from "./icon";
 import { siteConfig, siteContent } from "@/config/site";
+import { event } from "@/lib/gtm";
 
 export default function ContactCard() {
   const contacts = [
@@ -19,6 +22,13 @@ export default function ContactCard() {
     },
   ];
 
+  const handleGtmEvent = (url: string) => {
+    event({
+      event: "click_outbound_link",
+      value: url,
+    });
+  };
+
   return (
     <Card className="relative flex justify-center items-center flex-row text-primary dark:text-secondary">
       <div className="ssr-only">{siteContent.contact}</div>
@@ -27,11 +37,13 @@ export default function ContactCard() {
         {contacts?.map((item, index) => {
           return (
             <Link
+              passHref
               key={index}
               target="_blank"
               rel="noopener noreferrer"
               href={item?.href}
               className="button p-4"
+              onClick={() => handleGtmEvent(item?.href)}
             >
               {item?.icon}
             </Link>

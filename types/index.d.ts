@@ -17,3 +17,9 @@ export type SiteContent = {
   weather: string;
   contact: string;
 };
+
+export type GAEvent = {
+  category: string;
+  action: string;
+  label: string;
+};

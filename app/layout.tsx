@@ -3,7 +3,10 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { classMerge } from "@/lib/utils";
-import GoogleAnalytics from "@/components/google-analytics";
+import {
+  GoogleTagManagerHead,
+  GoogleTagManagerNoScript,
+} from "@/components/google-tag-manager";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -72,6 +75,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <GoogleTagManagerHead />
+
       <body
         className={classMerge(
           inter.className,
@@ -80,7 +85,7 @@ export default function RootLayout({
       >
         {children}
 
-        <GoogleAnalytics />
+        <GoogleTagManagerNoScript />
       </body>
     </html>
   );
