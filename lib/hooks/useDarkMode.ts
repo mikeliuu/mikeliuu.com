@@ -8,14 +8,10 @@ export const useDarkMode = (): [
 ] => {
   const isClient = typeof window !== "undefined";
 
-  const isSystemDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  ).matches;
-
   const [theme, setTheme] = useState(
-    isClient && localStorage.theme
-      ? localStorage.theme
-      : isClient && isSystemDarkMode
+    isClient && window.localStorage.theme
+      ? window.localStorage.theme
+      : isClient && window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light",
   );
@@ -34,7 +30,7 @@ export const useDarkMode = (): [
     root.classList.add(theme);
 
     if (isClient) {
-      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+      window.localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     }
   }, [theme]);
 
