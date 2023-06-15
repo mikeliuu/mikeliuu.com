@@ -51,6 +51,7 @@ export default function GoogleMapCard() {
         className={classMerge("google-map border-none hidden", {
           block: isLoaded,
         })}
+        title="Google Map for my location"
         width="100%"
         height="100%"
         loading="eager"

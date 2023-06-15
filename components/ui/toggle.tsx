@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { classMerge } from "@/lib/utils";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -7,18 +7,25 @@ interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
   ({ className, toggleClass, checked, onChange, ...props }, ref) => {
+    const versionId = useId();
+
     return (
       <label
+        htmlFor={`toggle-${versionId}`}
         className={classMerge(
           "relative inline-flex items-center cursor-pointer",
           className,
         )}
       >
         <input
+          id={`toggle-${versionId}`}
           ref={ref}
           {...props}
-          className="sr-only peer"
+          aria-labelledby={`toggle-${versionId}`}
+          aria-checked={checked}
+          role="checkbox"
           type="checkbox"
+          className="sr-only peer"
           checked={checked}
           onChange={onChange}
         />
@@ -28,7 +35,6 @@ const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
             "toggle peer h-8 w-[60px] rounded-[35px]",
             "after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:rounded-[35px] after:h-[28px] after:w-[28px] after:transition-all after:bg-secondary dark:after:bg-dark-light  dark:peer-checked:bg-dark",
             "peer-checked:after:translate-x-full peer-checked:bg-secondary-light",
-            // "bg-secondary-light dark:bg-dark",
             toggleClass,
           )}
         />

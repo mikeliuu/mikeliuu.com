@@ -9,14 +9,17 @@ import { event } from "@/lib/gtm";
 export default function ContactCard() {
   const contacts = [
     {
+      label: "Email address",
       href: `mailto:${siteConfig.links.email}`,
       icon: <Icons.mail />,
     },
     {
+      label: "Github",
       href: siteConfig.links.github,
       icon: <Icons.github />,
     },
     {
+      label: "LinkedIn",
       href: siteConfig.links.linkedin,
       icon: <Icons.linkedin />,
     },
@@ -37,10 +40,11 @@ export default function ContactCard() {
         {contacts?.map((item, index) => {
           return (
             <Link
-              passHref
               key={index}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={item?.label}
+              title={item?.label}
               href={item?.href}
               className="button p-4"
               onClick={() => handleGtmEvent(item?.href)}
