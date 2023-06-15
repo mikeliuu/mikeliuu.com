@@ -1,59 +1,42 @@
 import { useEffect, useState } from "react";
 
-const LOCALSTORAGE_THEME_KEY = "theme";
+const LOCAL_STORAGE_THEME_KEY = "theme";
 
 export const useDarkMode = (): [
   darkMode: boolean,
   toggleDarkMode: () => void,
 ] => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const isClient = typeof window !== "undefined";
 
-  const handleChangeTheme = (themeType: "light" | "dark") => {
-    const isDarkMode = themeType === "dark";
+  const isSystemDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  ).matches;
 
-    const root = document.documentElement;
+  const [theme, setTheme] = useState(
+    isClient && localStorage.theme
+      ? localStorage.theme
+      : isClient && isSystemDarkMode
+      ? "dark"
+      : "light",
+  );
+  const colorTheme = theme === "dark" ? "light" : "dark";
 
-    isDarkMode ? root.classList.add("dark") : root.classList.remove("dark");
-
-    setDarkMode(isDarkMode);
-
-    window.localStorage.setItem(LOCALSTORAGE_THEME_KEY, themeType);
-  };
+  const darkMode = theme === "dark";
 
   const toggleDarkMode = () => {
-    setDarkMode((prev) => !prev);
-
-    handleChangeTheme(darkMode ? "light" : "dark");
+    setTheme(colorTheme);
   };
 
-  const isLocalStorageEmpty = (): boolean => {
-    return !localStorage.getItem(LOCALSTORAGE_THEME_KEY);
-  };
+  useEffect(() => {
+    const root = window.document.documentElement;
 
-  const initTheme = () => {
-    if (typeof window === "undefined") return;
+    root.classList.remove(colorTheme);
+    root.classList.add(theme);
 
-    const root = document.documentElement;
-
-    if (isLocalStorageEmpty()) {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-
-      localStorage.setItem(LOCALSTORAGE_THEME_KEY, systemTheme);
-
-      root.classList.add(systemTheme);
-      handleChangeTheme(systemTheme);
-    } else {
-      const isDarkTheme: boolean =
-        localStorage.getItem(LOCALSTORAGE_THEME_KEY) === "dark";
-
-      handleChangeTheme(isDarkTheme ? "dark" : "light");
+    if (isClient) {
+      localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     }
-  };
-
-  useEffect(() => initTheme());
+  }, [theme]);
 
   return [darkMode, toggleDarkMode];
 };
