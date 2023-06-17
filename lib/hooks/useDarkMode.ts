@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { event } from "../gtm";
 
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
@@ -31,11 +30,6 @@ export const useDarkMode = (): [
     root.classList.add(theme);
 
     if (isClient) {
-      event({
-        event: "click_theme",
-        value: theme,
-      });
-
       window.localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
     }
   }, [theme]);

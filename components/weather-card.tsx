@@ -6,7 +6,6 @@ import CountUp from "react-countup";
 import { Card } from "./ui/card";
 import { Toggle } from "./ui/toggle";
 import { siteContent } from "@/config/site";
-import { event } from "@/lib/gtm";
 
 export type Temperature = {
   temp_c: number | null;
@@ -48,15 +47,6 @@ export default function WeatherCard() {
     toggleChecked();
 
     setTempType(event.target.checked ? "f" : "c");
-
-    handleGtmEvent(event.target.checked ? "f" : "c");
-  };
-
-  const handleGtmEvent = (temp: "f" | "c") => {
-    event({
-      event: "click_weather_temperature",
-      value: temp,
-    });
   };
 
   useEffect(() => {
@@ -65,8 +55,6 @@ export default function WeatherCard() {
 
   return (
     <Card className="flex items-center justify-center flex-col">
-      <div className="ssr-only">{siteContent.weather}</div>
-
       <div className="relative flex flex-row mb-8">
         <p className="text-primary dark:text-secondary text-8xl font-semibold tracking-wide my-6">
           <CountUp

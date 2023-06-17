@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
-import { siteConfig } from "@/config/site";
+import { siteConfig, siteContent } from "@/config/site";
 import { classMerge } from "@/lib/utils";
 import {
   GoogleTagManagerHead,
@@ -13,25 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: siteConfig.title,
   description: siteConfig.description,
-  keywords: [
-    "personal website",
-    "mikeliuu",
-    "Mike Liu",
-    "Next.js",
-    "TypeScript",
-    "React",
-    "Reactjs",
-    "Tailwind CSS",
-    "Responsive Web",
-    "neumorphism design",
-    "Google Map",
-    "Real-time Weather",
-    "Dark Mode",
-    "Github",
-    "Linkedin",
-    "Web Developer",
-    "Frontend Developer",
-  ],
+  keywords: siteConfig.keywords,
   authors: [
     {
       name: siteConfig.name,
@@ -85,6 +67,10 @@ export default function RootLayout({
         {children}
 
         <GoogleTagManagerNoScript />
+
+        <div className="ssr-only">
+          {Object.values(siteContent)?.map((content) => content)}
+        </div>
       </body>
     </html>
   );

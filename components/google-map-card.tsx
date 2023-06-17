@@ -39,8 +39,6 @@ export default function GoogleMapCard() {
 
   return (
     <Card className="overflow-hidden relative flex justify-center flex-col p-0">
-      <div className="ssr-only">{siteContent.map}</div>
-
       {!isLoaded && (
         <div className="text-primary dark:text-secondary flex justify-center items-center p-8">
           <ProgressBar progress={percentage} />

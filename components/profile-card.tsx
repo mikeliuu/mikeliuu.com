@@ -5,12 +5,10 @@ import { siteContent } from "@/config/site";
 export default function ProfileCard() {
   return (
     <Card className="relative flex justify-center flex-col">
-      <div className="ssr-only">{siteContent.profile}</div>
-
       <div className="overflow-hidden rounded-full flex self-center items-center justify-center w-[150px] h-[150px] pointer-events-none">
         <Image
           src="/profile.jpg"
-          alt="Profile Image"
+          alt={siteContent?.profile}
           width={200}
           height={200}
           priority
