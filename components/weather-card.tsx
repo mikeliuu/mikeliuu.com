@@ -74,7 +74,12 @@ export default function WeatherCard() {
           °C
         </p>
 
-        <Toggle className="mx-2" checked={isChecked} onChange={handleToggle} />
+        <Toggle
+          inputClass="weather-toggle"
+          className="mx-2"
+          checked={isChecked}
+          onChange={handleToggle}
+        />
 
         <p className="text-primary opacity-30 dark:opacity-100 dark:text-info text-md font-medium">
           °F

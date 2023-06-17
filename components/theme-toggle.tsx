@@ -21,6 +21,7 @@ export default function ThemeToggle({ className }: ThemeToggleProps) {
       </p>
 
       <Toggle
+        inputClass="theme-toggle"
         className="mx-2 dark:border-gray-100"
         checked={darkMode}
         onChange={toggleDarkMode}

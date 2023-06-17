@@ -1,12 +1,18 @@
+"use client";
+
 import React, { useId } from "react";
 import { classMerge } from "@/lib/utils";
 
 interface ToggleProps extends React.InputHTMLAttributes<HTMLInputElement> {
   toggleClass?: string;
+  inputClass?: string;
 }
 
 const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
-  ({ className, toggleClass, checked, onChange, ...props }, ref) => {
+  (
+    { className, toggleClass, inputClass, checked, onChange, ...props },
+    ref,
+  ) => {
     const versionId = useId();
 
     return (
@@ -25,7 +31,7 @@ const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
           aria-checked={checked}
           role="checkbox"
           type="checkbox"
-          className="sr-only peer"
+          className={classMerge("sr-only peer", inputClass)}
           checked={checked}
           onChange={onChange}
         />
