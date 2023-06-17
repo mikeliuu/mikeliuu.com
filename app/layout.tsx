@@ -37,6 +37,7 @@ export const metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [siteConfig.ogImage],
   },
   twitter: {
     card: "summary_large_image",
