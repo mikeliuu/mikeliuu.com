@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
   ogImage: `${process.env.NEXT_PUBLIC_WEB_URL}/og.png`,
   links: {
     email: "mikeliu058@gmail.com",
-    linkedin: "https://www.linkedin.com/in/mikeliudev",
+    linkedin: "https://www.linkedin.com/in/mikeliutw",
     github: "https://github.com/mikeliuu",
   },
 };
