@@ -2,7 +2,7 @@ import { SiteConfig, SiteContent } from "@/types";
 
 export const siteConfig: SiteConfig = {
   name: "Mike Liu @mikeliuu.com",
-  title: "Mike Liu - Frontend Developer",
+  title: "Mike Liu - Digital Savvy",
   description:
     "I'm Mike, this is my personal website built using Nextjs and Typescript with neumorphism design.",
   keywords: [
