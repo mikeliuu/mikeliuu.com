@@ -57,6 +57,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="canonical" href={siteConfig.url} />
+      </head>
+
       <GoogleTagManagerHead />
 
       <body
