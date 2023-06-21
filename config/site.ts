@@ -14,6 +14,7 @@ export const siteConfig: SiteConfig = {
     "typescript",
     "reactjs",
     "responsive web",
+    "seo",
     "digital marketing",
     "frontend developer",
     "personal website",

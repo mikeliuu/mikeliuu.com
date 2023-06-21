@@ -16,7 +16,7 @@ export default function About() {
         combination of technical expertise and digital marketing insights to
         achieve exceptional results. With a track record of delivering
         impressive conversion rates and implementing performance optimization
-        strategies, I am ready to utilize my skills as an SEO specialist.
+        strategies.
       </p>
     </Card>
   );
