@@ -7,17 +7,19 @@ import {
   GoogleTagManagerHead,
   GoogleTagManagerNoScript,
 } from "@/components/google-tag-manager";
+import Header from "@/components/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.title,
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   authors: [
     {
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: "",
     },
   ],
   creator: siteConfig.name,
@@ -33,7 +35,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: siteConfig.url,
+    url: "",
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
@@ -46,8 +48,11 @@ export const metadata = {
     images: [siteConfig.ogImage],
     creator: siteConfig.name,
   },
-  manifest: `${siteConfig.url}/site.webmanifest`,
+  manifest: "/site.webmanifest",
   viewport: "width=device-width, initial-scale=1.0, maximum-scale=1.0",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -57,10 +62,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="canonical" href={siteConfig.url} />
-      </head>
-
       <GoogleTagManagerHead />
 
       <body
@@ -69,7 +70,11 @@ export default function RootLayout({
           "bg-secondary dark:bg-dark-light",
         )}
       >
-        {children}
+        <main className="relative min-h-screen py-14 px-8 md:py-20">
+          <Header />
+
+          {children}
+        </main>
 
         <GoogleTagManagerNoScript />
 

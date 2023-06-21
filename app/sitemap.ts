@@ -6,5 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: process.env.NEXT_PUBLIC_WEB_URL!,
       lastModified: new Date(),
     },
+    {
+      url: `${process.env.NEXT_PUBLIC_WEB_URL!}/about`,
+      lastModified: new Date(),
+    },
   ];
 }

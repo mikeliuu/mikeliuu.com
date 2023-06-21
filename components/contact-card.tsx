@@ -23,7 +23,10 @@ export default function ContactCard() {
   ];
 
   return (
-    <Card className="relative flex justify-center items-center flex-row text-primary dark:text-secondary">
+    <Card
+      id="contact-card"
+      className="relative flex justify-center items-center flex-row text-primary dark:text-secondary"
+    >
       <div className="grid grid-flow-col gap-6">
         {contacts?.map((item, index) => {
           return (

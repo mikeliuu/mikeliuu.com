@@ -101,7 +101,7 @@
 }
 
 .dark .button:hover,
-.dark .button:active,
+/* .dark .button:active, */
 .dark .button:focus {
   box-shadow: inset -2px -2px 10px rgba(255, 255, 255, 0.05),
     inset 2px 3px 10px #070709;
@@ -182,7 +182,7 @@
 }
 
 .button:hover,
-.button:active,
+/* .button:active, */
 .button:focus {
   box-shadow: inset -3px -3px 7px #ffffff,
     inset 3px 3px 7px rgba(136, 165, 191, 0.48);

@@ -54,7 +54,10 @@ export default function WeatherCard() {
   }, []);
 
   return (
-    <Card className="flex items-center justify-center flex-col">
+    <Card
+      id="weather-card"
+      className="flex items-center justify-center flex-col"
+    >
       <div className="relative flex flex-row mb-8">
         <p className="text-primary dark:text-secondary text-8xl font-semibold tracking-wide my-6">
           <CountUp

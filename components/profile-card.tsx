@@ -4,7 +4,7 @@ import { siteContent } from "@/config/site";
 
 export default function ProfileCard() {
   return (
-    <Card className="relative flex justify-center flex-col">
+    <Card id="profile-card" className="relative flex justify-center flex-col">
       <div className="overflow-hidden rounded-full flex self-center items-center justify-center w-[150px] h-[150px] pointer-events-none">
         <Image
           src="/profile.jpg"
