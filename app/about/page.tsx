@@ -8,15 +8,7 @@ export default function About() {
       </h1>
 
       <p className="leading-loose">
-        Hi there, I am Mike Liu! An experienced digital marketer and web
-        developer with a strong focus on SEO optimization. Throughout my career,
-        I have successfully driven user engagement and improved search
-        visibility for various industries. Proficient in developing SEO-friendly
-        websites and executing effective campaign strategies, I bring a
-        combination of technical expertise and digital marketing insights to
-        achieve exceptional results. With a track record of delivering
-        impressive conversion rates and implementing performance optimization
-        strategies.
+        Hello! I'm Mike, a skilled web developer with over 2 years of experience, primarily focusing on frontend technologies like ReactJS, JavaScript, and TypeScript. I'm passionate about creating user-friendly interfaces and have a strong track record of delivering high-quality solutions that enhance the user experience while maintaining well-organized code. In addition to my frontend expertise, I'm also excited to embark on my journey as a backend developer, learning and growing in Java and Spring Boot to craft comprehensive web solutions that drive business success.
       </p>
     </Card>
   );
