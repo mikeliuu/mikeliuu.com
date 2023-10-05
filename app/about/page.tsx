@@ -8,14 +8,14 @@ export default function About() {
       </h1>
 
       <p className="leading-loose">
-        Hello! I'm Mike, a skilled web developer with over 2 years of
+        Hello! I&apos;m Mike, a skilled web developer with over 2 years of
         experience, primarily focusing on frontend technologies like ReactJS,
-        JavaScript, and TypeScript. I'm passionate about creating user-friendly
-        interfaces and have a strong track record of delivering high-quality
-        solutions that enhance the user experience. In addition to my frontend
-        expertise, I'm also excited to embark on my journey as a backend
-        developer, learning and growing in Java and Spring Boot to craft
-        comprehensive web solutions that drive business success.
+        JavaScript, and TypeScript. I&apos;m passionate about creating
+        user-friendly interfaces and have a strong track record of delivering
+        high-quality solutions that enhance the user experience. In addition to
+        my frontend expertise, I&apos;m also excited to embark on my journey as
+        a backend developer, learning and growing in Java and Spring Boot to
+        craft comprehensive web solutions that drive business success.
       </p>
     </Card>
   );
